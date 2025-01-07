@@ -1,0 +1,7 @@
+deployment:
+  tasks:
+    - set -e
+    - export DEPLOYPATH=/home/cqdjyhrb/public_html/
+    - [ ! -d "$DEPLOYPATH" ] && mkdir -p $DEPLOYPATH
+    - rsync -av index.html style.css .htaccess Minuman.html about.html contact.html property-6.jpg property-list.html testimonial.html sdf.html $DEPLOYPATH
+    - rsync -av CSS/ image/ js/ lib/ $DEPLOYPATH
